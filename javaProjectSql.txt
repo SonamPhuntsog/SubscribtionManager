@@ -1,0 +1,407 @@
+--CUSTOMER
+create table customer (
+	id int unsigned auto_increment primary key,
+	password varchar(30) not null,
+	name varchar(30),
+	address1 varchar(50),
+	address2 varchar(50),
+	address3 varchar(50),
+	city varchar(30),
+	state varchar(30),
+	country varchar(30),
+	pin int unsigned,
+	billOrFree char(1),
+	email_id varchar(30)
+	);
+—	MAGAZINE
+create table magazine (
+	m_id int unsigned auto_increment primary key,
+	name varchar( 30),
+	prisePerMonth int unsigned,
+	description varchar(100)  
+	);
+
+— 	NEWS PAPER 
+create table newsPaper(
+	n_id int unsigned auto_increment primary key,
+	name varchar( 30),
+	prisePerMonth int unsigned,
+	prisePerYear int unsigned,
+	description varchar(100)  
+	);
+
+—        ADMIN TABLE FOR LOGIN
+create table admin(
+	name varchar(30) primary key,
+	password varchar(30) not null
+	);
+
+
+
+—     	SUBSCRIBTION FOR MAGAZINE
+create table subscribeMagazine (
+	id int unsigned ,
+	m_id int unsigned ,
+	noOfCopy int unsigned,
+	expirationDate date , 
+	primary key(id, m_id),
+	foreign key (id)  references customer(id) on delete cascade,
+	foreign key (m_id) references magazine(m_id) on delete cascade
+	 );
+
+—     	SUBSCRIBTION FOR NEWS PAPER
+create table subscribeNewsPaper (
+	id int unsigned ,
+	n_id int unsigned ,
+	noOfCopy int unsigned,
+	expirationDate date  ,
+	primary key (id, n_id),
+	foreign key (id) references customer(id) on delete cascade,
+	foreign key (n_id) references newsPaper(n_id) on delete cascade
+	 );
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+insert into customer
+ (	password,
+	 name,
+	 address1,
+	 address2,
+	address3,
+	city,
+	state,
+	country,
+	pin,
+	billOrFree,
+	email_id
+) 
+	values 
+
+(       "Compact",
+	"Watson",
+        "24 green park ",
+	"gfhj road",
+	"opera house",
+	"Sydney",
+	"Canberra",
+	"Australia",
+	122202,
+	"b",
+	"watsonabcv@gmail.com");
+
+-->insert into newsPaper(name,
+	                 prisePerMonth,
+	                 prisePerYear,
+	                 description  
+)
+    values
+("SANDESH",120,1440,ÕokayÕ);	
+
+
+
+->insert into subscribeMagazine (
+	id,
+	m_id,
+	noOfCopy,
+	expirationDate, 
+  )
+values
+(1,1,5,"23/04/2017");
+
+
+insert into newsPaper (name,prisePerMonth,prisePerYear,description) values ("Divya Bhaskar",5,1600,"Gujarati newspaper");
+
+
+
+
+
+2>>
+
+insert into customer
+ (	password,
+	 name,
+	 address1,
+	 address2,
+	address3,
+	city,
+	state,
+	country,
+	pin,
+	billOrFree,
+	email_id
+) 
+	values 
+
+(       "dark",
+	"Arun",
+        "dndwn ",
+	"gfhj road",
+	"green house",
+	"nfjnjn",
+	"ontario",
+	"Canada",
+	122204,
+	"f",
+	"bcv@gmail.com");
+
+3>>
+insert into customer
+ (	password,
+	 name,
+	 address1,
+	 address2,
+	address3,
+	city,
+	state,
+	country,
+	pin,
+	billOrFree,
+	email_id
+) 
+	values 
+
+(       "fadu",
+	"Mayur",
+        "kmkk ",
+	"def road",
+	"red house",
+	"gghghg",
+	"Can",
+	"U.S",
+	122209,
+	"f",
+	"punuabcv@gmail.com");
+
+4>>
+insert into customer
+ (	password,
+	 name,
+	 address1,
+	 address2,
+	address3,
+	city,
+	state,
+	country,
+	pin,
+	billOrFree,
+	email_id
+) 
+	values 
+
+(       "fad",
+	"hardik",
+        "gbgbgb ",
+	"abc",
+	"house",
+	"ghhg",
+	"Gujarat",
+	"India",
+	122202,
+	"f",
+	"gabcv@gmail.com");
+
+5>>
+insert into customer
+ (	password,
+	 name,
+	 address1,
+	 address2,
+	address3,
+	city,
+	state,
+	country,
+	pin,
+	billOrFree,
+	email_id
+) 
+	values 
+
+(       "mayur",
+	"hardik",
+        "dfdfd ",
+	"abgh",
+	"gre house",
+	"toronto",
+	"Canberra",
+	"France",
+	122204,
+	"b",
+	"unabcv@gmail.com");
+
+
+6>>
+insert into customer
+ (	password,
+	 name,
+	 address1,
+	 address2,
+	address3,
+	city,
+	state,
+	country,
+	pin,
+	billOrFree,
+	email_id
+) 
+	values 
+
+(       "kaushal",
+	"Mayur",
+        "erer ",
+	"ap road",
+	"gree house",
+	"vbn",
+	"Can",
+	"France",
+	122208,
+	"b",
+	"arfgabcv@gmail.com");
+7>>
+insert into customer
+ (	password,
+	 name,
+	 address1,
+	 address2,
+	address3,
+	city,
+	state,
+	country,
+	pin,
+	billOrFree,
+	email_id
+) 
+	values 
+
+(       "jhjhj",
+	"asas",
+        " hjjkl",
+	"abcdf",
+	"blue house",
+	"jhn",
+	"Canberry",
+	"India",
+	122203,
+	"b",
+	"asdfgnabcv@gmail.com");
+8>>
+insert into customer
+ (	password,
+	 name,
+	 address1,
+	 address2,
+	address3,
+	city,
+	state,
+	country,
+	pin,
+	billOrFree,
+	email_id
+) 
+	values 
+
+(       "bhavin",
+	"parmar",
+        " rty",
+	"abcdef",
+	"yellow house",
+	"baroda",
+	"Canberu",
+	"U.S",
+	122202,
+	"f",
+	"aruna@gmail.com");
+9>>
+insert into customer
+ (	password,
+	 name,
+	 address1,
+	 address2,
+	address3,
+	city,
+	state,
+	country,
+	pin,
+	billOrFree,
+	email_id
+) 
+	values 
+
+(       "bhaskar",
+	"bhavin",
+        "fgfgf ",
+	"abhj",
+	"black house",
+	"jkkhk",
+	"Canda",
+	"France",
+	122252,
+	"b",
+	"arunabcnm@gmail.com");
+
+10>>
+insert into customer
+ (	password,
+	 name,
+	 address1,
+	 address2,
+	address3,
+	city,
+	state,
+	country,
+	pin,
+	billOrFree,
+	email_id
+) 
+	values 
+
+(       "jkjkj",
+	"sonam",
+        " yuuuio",
+	"abcfg",
+	"white house",
+	"bhnjkl",
+	"Canara",
+	"India",
+	122232,
+	"b",
+	"arhnabcv@gmail.com");
+
+1)    insert into subscribeMagazine values(1,1,5,"2017-04-30");
+
+1)    insert into subscribeMagazine values(1,2,12,"2016-08-10");
+
+1)    insert into subscribeMagazine values(2,3,5,"2018-02-25");
+
+1)    insert into subscribeMagazine values(3,1,16,"2016-03-30");
+
+1)    insert into subscribeMagazine values(6,1,8,"2017-02-10");
+
+1)    insert into subscribeMagazine values(9,2,9,"2016-09-30");
+
+1)    insert into subscribeMagazine values(8,3,5,"2017-06-30");
+
+1)    insert into subscribeMagazine values(5,2,5,"2016-01-30");
+
+1)    insert into subscribeMagazine values(7,2,5,"2016-04-30");
+
+insert into magazine values(1,"LIFE",30,"mag");
+
+insert into magazine values(2,"Nat Geo",300,"amag");
+
+insert into magazine values(3,"Nature",330,"imag");
+
+insert into subscribeNewsPaper values(1,2,6,1600,"2017-04-21");
+
+insert into subscribeNewsPaper values(1,4,9,1700,"2016-02-25");
+
+insert into subscribeNewsPaper values(5,3,16,1200,"2016-03-21");
+
+insert into subscribeNewsPaper values(6,1,10,1800,"2016-04-21");
+
+insert into subscribeNewsPaper values(8,4,3,1900,"2018-04-15");
+
+insert into subscribeNewsPaper values(3,3,3,2100,"2016-01-13");
+
+insert into subscribeNewsPaper values(4,4,3,1500,"2017-09-15");
+
+insert into subscribeNewsPaper values(7,4,3,1900,"2018-10-19");
+
+insert into subscribeNewsPaper values(2,9,3,1500,"2017-04-15");
